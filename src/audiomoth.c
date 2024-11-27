@@ -458,7 +458,7 @@ uint32_t AudioMoth_getClockFrequency() {
 
 void AudioMoth_setClockDivider(AM_highFrequencyClockDivider_t divider) {
 
-    CMU_ClkDiv_TypeDef clockDivider = divider == AM_HF_CLK_DIV4 ? cmuClkDiv_4 : divider == AM_HF_CLK_DIV2 ? cmuClkDiv_2 : cmuClkDiv_1;
+    CMU_ClkDiv_TypeDef clockDivider = divider == AM_HF_CLK_DIV8 ? cmuClkDiv_8 : divider == AM_HF_CLK_DIV4 ? cmuClkDiv_4 : divider == AM_HF_CLK_DIV2 ? cmuClkDiv_2 : cmuClkDiv_1;
 
     CMU_ClockDivSet(cmuClock_HF, clockDivider);
 
@@ -828,6 +828,14 @@ void AudioMoth_disableMicrophone(void) {
     /* Disable VREF power */
 
     if (hardwareVersion < AM_VERSION_4) GPIO_PinOutClear(VREF_GPIOPORT, VREF_ENABLE);
+
+    /* Disable OPA1 and OPA2 */
+
+    CMU_ClockEnable(cmuClock_DAC0, true);
+
+    OPAMP_Disable(DAC0, OPA1);
+
+    OPAMP_Disable(DAC0, OPA2);
 
     /* Stop the clocks */
 

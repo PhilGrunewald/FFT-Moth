@@ -38,7 +38,7 @@ typedef enum {AM_LOW_GAIN_RANGE, AM_NORMAL_GAIN_RANGE} AM_gainRange_t;
 
 typedef enum {AM_SD_CARD_NORMAL_SPEED, AM_SD_CARD_HIGH_SPEED} AM_sdCardSpeed_t;
 
-typedef enum {AM_HF_CLK_DIV1, AM_HF_CLK_DIV2, AM_HF_CLK_DIV4} AM_highFrequencyClockDivider_t;
+typedef enum {AM_HF_CLK_DIV1, AM_HF_CLK_DIV2, AM_HF_CLK_DIV4, AM_HF_CLK_DIV8} AM_highFrequencyClockDivider_t;
 
 typedef enum {AM_SWITCH_CUSTOM, AM_SWITCH_DEFAULT, AM_SWITCH_USB, AM_SWITCH_NONE} AM_switchPosition_t;
 

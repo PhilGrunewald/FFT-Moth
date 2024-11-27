@@ -1,5 +1,8 @@
-# AudioMoth-Project #
-A minimal project on which all AudioMoth firmware can be built.
+# FFT-Moth #
+
+Turning AudioMoth into a FFT-based acoustic monitoring device.
+
+Forked from: [AudioMoth-Project](https://github.com/OpenAcousticDevices/AudioMoth-Project)
 
 ### Usage ###
 
